@@ -56,7 +56,7 @@ Resolução:
 
 ![image](https://user-images.githubusercontent.com/48892066/161325244-a67546d4-5d86-42f9-a4e7-0a4c91d30be3.png)
 
-> Código Dax:
+Código Dax:
 ```
 EVALUATE
 'public dim_loja'
@@ -64,7 +64,7 @@ EVALUATE
 
 ![image](https://user-images.githubusercontent.com/48892066/161325699-4c8d62b0-5a83-4420-a93b-e2dc6b8e178c.png)
 
-> Código Dax:
+Código Dax:
 
 ```
 EVALUATE
@@ -74,7 +74,7 @@ DISTINCT ( 'public dim_loja'[dim_loj_estado] )
 
 ![image](https://user-images.githubusercontent.com/48892066/161326032-936635e1-6a53-43f0-bb2b-11256550acb4.png)
 
-> Código Dax:
+Código Dax:
 
 ```
 EVALUATE
@@ -82,10 +82,11 @@ FILTER(
 'public dim_loja',
 'public dim_loja'[dim_loj_estado] = "BA"
 )
+```
 
 ![image](https://user-images.githubusercontent.com/48892066/161326269-f31a5f84-ff1e-45c3-8374-33fc7b7f9bcb.png)
 
-> Código Dax:
+Código Dax:
 
 ```
 EVALUATE ROW(
@@ -95,13 +96,13 @@ EVALUATE ROW(
 
 ### Etapa 06 - Encontrar faturamento no Dax Studio II
 
-#### DAX 06
+Orientações:
 
 > Criar a consulta DAX para retornar o total do faturamento das vendas referente ao ano de 1999 do estado “BA”. Usar a função TREATAS para filtrar o estado “BA”
 
 ![image](https://user-images.githubusercontent.com/48892066/161326772-a3ee905b-ed53-4823-ac87-e4fcf308ba9a.png)
 
-> Código dax:
+Código dax:
 
 ```
 EVALUATE
