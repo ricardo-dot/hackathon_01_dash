@@ -100,6 +100,8 @@ Orientações:
 
 > Criar a consulta DAX para retornar o total do faturamento das vendas referente ao ano de 1999 do estado “BA”. Usar a função TREATAS para filtrar o estado “BA”
 
+Resolução:
+
 ![image](https://user-images.githubusercontent.com/48892066/161326772-a3ee905b-ed53-4823-ac87-e4fcf308ba9a.png)
 
 Código dax:
