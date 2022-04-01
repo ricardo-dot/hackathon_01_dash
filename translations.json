@@ -1,0 +1,344 @@
+{
+  "referenceCulture": {
+    "name": "6d856f83-9264-4157-95dd-be2df15da9a7",
+    "id": "6d856f83-9264-4157-95dd-be2df15da9a7",
+    "model": {
+      "name": "Model",
+      "tables": [
+        {
+          "name": "public dim_loja",
+          "columns": [
+            {
+              "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61"
+            },
+            {
+              "name": "dim_loj_id"
+            },
+            {
+              "name": "dim_loj_nome"
+            },
+            {
+              "name": "dim_loj_estado"
+            }
+          ]
+        },
+        {
+          "name": "DateTableTemplate_17d3c398-47fb-4f2b-a539-0dc26b0cb954",
+          "columns": [
+            {
+              "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61"
+            },
+            {
+              "name": "Date"
+            },
+            {
+              "name": "Ano"
+            },
+            {
+              "name": "MonthNo"
+            },
+            {
+              "name": "Mês"
+            },
+            {
+              "name": "QuarterNo"
+            },
+            {
+              "name": "Trimestre"
+            },
+            {
+              "name": "Dia"
+            }
+          ],
+          "hierarchies": [
+            {
+              "name": "Hierarquia de datas",
+              "levels": [
+                {
+                  "name": "Ano"
+                },
+                {
+                  "name": "Trimestre"
+                },
+                {
+                  "name": "Mês"
+                },
+                {
+                  "name": "Dia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "public dim_produto",
+          "columns": [
+            {
+              "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61"
+            },
+            {
+              "name": "dim_pro_id"
+            },
+            {
+              "name": "dim_pro_nome"
+            },
+            {
+              "name": "dim_pro_categoria"
+            },
+            {
+              "name": "dim_pro_familia"
+            }
+          ]
+        },
+        {
+          "name": "public dim_tempo",
+          "columns": [
+            {
+              "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61"
+            },
+            {
+              "name": "dim_tem_id"
+            },
+            {
+              "name": "dim_tem_dia"
+            },
+            {
+              "name": "dim_tem_mes"
+            },
+            {
+              "name": "dim_tem_ano"
+            },
+            {
+              "name": "dim_tem_mes_ano"
+            },
+            {
+              "name": "dim_dia_mes_ano"
+            },
+            {
+              "name": "date"
+            }
+          ]
+        },
+        {
+          "name": "public fat_vendas",
+          "columns": [
+            {
+              "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61"
+            },
+            {
+              "name": "dim_tem_id"
+            },
+            {
+              "name": "dim_loj_id"
+            },
+            {
+              "name": "dim_pro_id"
+            },
+            {
+              "name": "fat_ven_quantidade"
+            },
+            {
+              "name": "fat_ven_faturamento"
+            }
+          ]
+        },
+        {
+          "name": "BA_CAT1_TOTAL_VENDAS",
+          "columns": [
+            {
+              "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61"
+            },
+            {
+              "name": "Total Sales"
+            },
+            {
+              "name": "dim_tem_ano"
+            },
+            {
+              "name": "dim_tem_mes_ano"
+            },
+            {
+              "name": "dim_loj_nome"
+            },
+            {
+              "name": "date"
+            }
+          ],
+          "measures": [
+            {
+              "name": "Medida"
+            }
+          ]
+        },
+        {
+          "name": "1999_BA_TOTAL_VENDAS",
+          "columns": [
+            {
+              "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61"
+            },
+            {
+              "name": "dim_loj_nome"
+            },
+            {
+              "name": "dim_pro_categoria"
+            },
+            {
+              "name": "Total Faturamento"
+            }
+          ]
+        },
+        {
+          "name": "Tabela nova",
+          "columns": [
+            {
+              "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61"
+            },
+            {
+              "name": "dim_tem_mes_ano"
+            },
+            {
+              "name": "dim_loj_nome"
+            },
+            {
+              "name": "Total Sales"
+            }
+          ]
+        },
+        {
+          "name": "nova table",
+          "columns": [
+            {
+              "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61"
+            },
+            {
+              "name": "public dim_loja_dim_loj_estado"
+            },
+            {
+              "name": "Total vendas"
+            }
+          ]
+        },
+        {
+          "name": "LocalDateTable_0735d235-d0d4-426b-8519-f093e6a133d9",
+          "columns": [
+            {
+              "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61"
+            },
+            {
+              "name": "Date"
+            },
+            {
+              "name": "Ano"
+            },
+            {
+              "name": "MonthNo"
+            },
+            {
+              "name": "Mês"
+            },
+            {
+              "name": "QuarterNo"
+            },
+            {
+              "name": "Trimestre"
+            },
+            {
+              "name": "Dia"
+            }
+          ],
+          "hierarchies": [
+            {
+              "name": "Hierarquia de datas",
+              "levels": [
+                {
+                  "name": "Ano"
+                },
+                {
+                  "name": "Trimestre"
+                },
+                {
+                  "name": "Mês"
+                },
+                {
+                  "name": "Dia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "LocalDateTable_74a82a16-e9f9-4da3-81df-87db5a43e662",
+          "columns": [
+            {
+              "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61"
+            },
+            {
+              "name": "Date"
+            },
+            {
+              "name": "Ano"
+            },
+            {
+              "name": "MonthNo"
+            },
+            {
+              "name": "Mês"
+            },
+            {
+              "name": "QuarterNo"
+            },
+            {
+              "name": "Trimestre"
+            },
+            {
+              "name": "Dia"
+            }
+          ],
+          "hierarchies": [
+            {
+              "name": "Hierarquia de datas",
+              "levels": [
+                {
+                  "name": "Ano"
+                },
+                {
+                  "name": "Trimestre"
+                },
+                {
+                  "name": "Mês"
+                },
+                {
+                  "name": "Dia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "etapa09",
+          "columns": [
+            {
+              "name": "RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61"
+            },
+            {
+              "name": "Coluna"
+            }
+          ],
+          "measures": [
+            {
+              "name": "total_fat"
+            },
+            {
+              "name": "fat_period"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "cultures": [
+    {
+      "name": "pt-BR 1"
+    }
+  ]
+}

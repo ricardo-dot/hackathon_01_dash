@@ -1,0 +1,128 @@
+﻿// ETAPA 03: DAX1
+// Listar os estados da dimensão DIM_LOJA
+
+EVALUATE
+'public dim_loja'
+
+
+
+
+//ETAPA 03: DAX2
+// Listar os estados sem repetição da dimensão DIM_LOJA
+
+EVALUATE
+DISTINCT ( 'public dim_loja'[dim_loj_estado] )
+
+
+
+
+// ETAPA 03: DAX3
+// Listar o campus da dimensão DIM_LOJA filtrados pelo estado BA
+
+EVALUATE
+FILTER(
+'public dim_loja',
+'public dim_loja'[dim_loj_estado] = "BA"
+)
+
+
+
+
+// ETAPA 03: DAX4
+// Calcular o faturamento total da tabela de fatos FAT_VENDAS
+
+
+EVALUATE ROW(
+	"Total vendas", SUM('public fat_vendas'[fat_ven_faturamento])
+) 
+
+
+EVALUATE {
+	SUM('public fat_vendas'[fat_ven_faturamento])
+}
+
+
+EVALUATE 
+CALCULATETABLE('public dim_loja', 'public dim_loja'[dim_loj_estado] = "BA")
+
+
+
+
+
+
+
+
+
+
+
+// ETAPA 05
+// Criar a consulta DAX para retornar o total do faturamento das vendas referentes a Categoria=“CAT1” (DIM_PRODUTO) e do Estado=“BA” (DIM_LOJA)
+
+EVALUATE
+SUMMARIZECOLUMNS (
+	'public dim_tempo'[dim_tem_mes_ano],
+	'public dim_loja'[dim_loj_nome],
+	FILTER('public dim_loja', 'public dim_loja'[dim_loj_estado] = "BA"),
+	FILTER('public dim_produto', 'public dim_produto'[dim_pro_categoria]="CAT1"),
+    "Total Sales", SUM ( 'public fat_vendas'[fat_ven_faturamento] )
+)
+
+
+
+
+
+
+
+
+// ETAPA 06
+// Criar a consulta DAX para retornar o total do faturamento das vendas referente ao ano de 1999 do estado “BA”. Usar a função TREATAS para filtrar o estado “BA”
+
+EVALUATE
+SUMMARIZECOLUMNS(
+	'public dim_loja'[dim_loj_nome],
+	'public dim_produto'[dim_pro_categoria],
+	TREATAS({1999}, 'public dim_tempo'[dim_tem_ano]),
+	TREATAS({"BA"}, 'public dim_loja'[dim_loj_estado]), 
+	"Total Faturamento", SUM('public fat_vendas'[fat_ven_faturamento])
+)
+
+
+
+
+
+
+
+
+// TESTE - ETAPA 07
+// **obs: Não funciona no PBI. Criar ordenação manual.
+
+EVALUATE 
+SUMMARIZECOLUMNS (
+	'public dim_tempo'[date],
+	'public dim_tempo'[dim_tem_mes_ano_pw],
+	'public dim_loja'[dim_loj_nome],
+	FILTER('public dim_loja', 'public dim_loja'[dim_loj_estado] = "BA"),
+	FILTER('public dim_produto', 'public dim_produto'[dim_pro_categoria]="CAT1"),
+    "Total Sales", SUM ( 'public fat_vendas'[fat_ven_faturamento] )
+) ORDER BY('public dim_tempo'[date])
+
+
+
+
+
+
+
+
+// ETAPA 09
+// Criar uma medida para apresentar o crescimento percentual do faturamento dos estados “BA” e “PB” entre os anos 1999 e 2000.
+
+DEFINE
+	MEASURE 'medidas_percentual_faturamento'[total_faturamento] = 
+		SUM('public fat_vendas'[fat_ven_faturamento])
+		
+	MEASURE 'medidas_percentual_faturamento'[periodo_faturamento] = 
+		CALCULATE([total_faturamento], SAMEPERIODLASTYEAR('public dim_tempo'[date]))
+		
+	MEASURE  'medidas_percentual_faturamento'[Yoy_faturamento] = 
+		DIVIDE([total_faturamento]-[periodo_faturamento], [periodo_faturamento])-1
+	EVALUATE{ [Yoy_faturamento] }
