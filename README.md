@@ -45,8 +45,11 @@ Resultado final após a importação da base de dados no Power BI:
 
 Orientações:
 > DAX 1: Listar os estados da dimensão DIM_LOJA
+> 
 > DAX 2: Listar os estados sem repetição da dimensão DIM_LOJA
+> 
 > DAX 3: Listar o campus da dimensão DIM_LOJA filtrados pelo estado BA
+> 
 > DAX 4: Calcular o faturamento total da tabela de fatos FAT_VENDAS
 
 Resolução:
