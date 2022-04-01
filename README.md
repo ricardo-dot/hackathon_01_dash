@@ -93,6 +93,20 @@ EVALUATE ROW(
 ) 
 ```
 
+### Etapa 04 - 
+
+Resolução:
+
+No Power Query foi adicionada uma coluna personalizada a partir do seguinte código:
+
+```
+= Text.From([dim_tem_mes]) & "/" & Text.From([dim_tem_ano])
+```
+Resultado final no Power BI:
+
+![image](https://user-images.githubusercontent.com/48892066/161332812-bbb98fa0-919c-4bee-8b0b-7788a6efb53b.png)
+
+
 ### Etapa 06 - Encontrar faturamento no Dax Studio II
 
 Orientações:
@@ -122,8 +136,7 @@ Orientação:
 > Criar uma medida para apresentar o crescimento percentual do faturamento dos estados “BA” e “PB” entre os anos 1999 e 2000.
 > 
 > Apresentar as tabelas com o componentes no Power BI (painel 1)
-> 
-> ![https---s3-us-west-2 amazonaws com-secure notion-static com-b6f50066-8b19-463a-b1f9-a34fec048f58-passoIX](https://user-images.githubusercontent.com/48892066/161332187-3006e58a-b364-419a-80f2-aa85c6ab90b5.png)
+
 Resolução: 
 
 ![image](https://user-images.githubusercontent.com/48892066/161332008-37526b52-568a-4289-987c-68cd995ceed0.png)
@@ -141,3 +154,7 @@ DEFINE
 		DIVIDE([total_faturamento]-[periodo_faturamento], [periodo_faturamento])-1
 	EVALUATE{ [Yoy_faturamento] }
 ```
+
+Resultado Final no Power BI
+
+![image](https://user-images.githubusercontent.com/48892066/161332601-8d4331da-2bcf-4b74-8b73-b57d85edd56b.png)
