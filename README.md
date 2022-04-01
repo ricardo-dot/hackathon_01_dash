@@ -28,7 +28,7 @@ Orientação:
 > Instalar o Postgres, Instalar o Power BI Desktop, Instalar o Dax Studio, Instalar o Tabular Editor.
 
 Resolução:
-Foi feito o download das ferramentas Postgres, Power Bi, Dax Studio e Tabular Editor.
+Foram feitas as instalações das ferramentas Postgres, Power Bi, Dax Studio e Tabular Editor.
 
 #### Etapa 02 - Conexão POSTGRES-POWER BI
 Orientação:
@@ -38,12 +38,18 @@ Orientação:
 Resolução:
 
 Resultado final após a importação da base de dados no Power BI:
+
 ![image](https://user-images.githubusercontent.com/48892066/161325017-5399432c-5ed0-4485-a902-6eabb9e964ca.png)
 
 ### Etapa 03 - Criar Consultas no Dax Studio
 
-#### DAX 1
-> Listar os estados da dimensão DIM_LOJA
+Orientações:
+> DAX 1: Listar os estados da dimensão DIM_LOJA
+> DAX 2: Listar os estados sem repetição da dimensão DIM_LOJA
+> DAX 3: Listar o campus da dimensão DIM_LOJA filtrados pelo estado BA
+> DAX 4: Calcular o faturamento total da tabela de fatos FAT_VENDAS
+
+Resolução:
 
 ![image](https://user-images.githubusercontent.com/48892066/161325244-a67546d4-5d86-42f9-a4e7-0a4c91d30be3.png)
 
@@ -52,9 +58,6 @@ Resultado final após a importação da base de dados no Power BI:
 EVALUATE
 'public dim_loja'
 ```
-
-#### DAX 2
-> Listar os estados sem repetição da dimensão DIM_LOJA
 
 ![image](https://user-images.githubusercontent.com/48892066/161325699-4c8d62b0-5a83-4420-a93b-e2dc6b8e178c.png)
 
@@ -65,8 +68,6 @@ EVALUATE
 DISTINCT ( 'public dim_loja'[dim_loj_estado] )
 ```
 
-#### DAX 3
-> Listar o campus da dimensão DIM_LOJA filtrados pelo estado BA
 
 ![image](https://user-images.githubusercontent.com/48892066/161326032-936635e1-6a53-43f0-bb2b-11256550acb4.png)
 
@@ -78,9 +79,6 @@ FILTER(
 'public dim_loja',
 'public dim_loja'[dim_loj_estado] = "BA"
 )
-```
-#### DAX 4
-> Calcular o faturamento total da tabela de fatos FAT_VENDAS
 
 ![image](https://user-images.githubusercontent.com/48892066/161326269-f31a5f84-ff1e-45c3-8374-33fc7b7f9bcb.png)
 
