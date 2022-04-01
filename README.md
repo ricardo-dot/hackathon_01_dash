@@ -157,7 +157,20 @@ SUMMARIZECOLUMNS(
 
 ### Etapa 07 - Criar o Painel I no Power BI
 
-![passoVII.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2a5296be-e62e-4dbc-8d4f-1f4d74b6bb68/passoVII.png)
+Orientações: 
+
+> Criar as tabelas referente ao Passo V e VI no Power BI
+> 
+> Apresentar as tabelas com os componentes do Power BI (painel 1)
+
+Resolução:
+
+Os códigos Dax feito nas etapas 5 e 6 foram aplicados no Power BI. Foi gerados duas tabelas (vendas_1999_ba e vendas_cat1_ba) e em seguida adicionado os gráficos e tabelas referentes a cada uma.
+
+Resultado final no Power BI:
+
+![image](https://user-images.githubusercontent.com/48892066/161334768-e9acc6ef-18b1-42db-b900-4c4f336b1a11.png)
+
 
 ### Etapa 08 - Criar nova coluna no Power BI
 
@@ -172,6 +185,7 @@ Foi utilizado o recurso de coluna calculada com a seguinte formula Dax:
 dim_dia_mes_ano_pw = FORMAT(DATE('public dim_tempo'[dim_tem_ano], 'public dim_tempo'[dim_tem_mes], 'public dim_tempo'[dim_tem_dia]), "dddd, dd \de mmmm \de yyyy")
 ```
 Resultado final no Power BI: 
+
 ![image](https://user-images.githubusercontent.com/48892066/161334034-aedf4e80-d99f-4bdc-acfe-5cefb1182e8d.png)
 
 
