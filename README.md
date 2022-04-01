@@ -21,5 +21,21 @@ importá-lo para o Power BI. Posteriormente serão resolvidos um conjunto de con
 
 Abaixo, você encontra duas tabelas. Uma contém cada etapa do desafio e a outra contém o conteúdo que vocês podem consumir para ajudá-los no caminho.
 
+### ➡ Descrição das Etapas
+https://datascibr.notion.site/1-HACKATHON-Data-Science-BR-69f5ee7fc32d49cbb2b8fa475342c579
+
+#### Etapa 01 - Download das ferramentas
+> Resolvido
+
+#### Etapa 02 - Conexão POSTGRES-POWER BI
+** Criar o Banco de Dados DW_VENDAS no Postgres e executar o script e consumir o modelo no Power BI. 
+** Use a opção de import do modelo no Power BI. (O modelo abaixo deve ser visualizado na ferramenta Power BI)
+
+> Resultado no Power BI
+![image](https://user-images.githubusercontent.com/48892066/161322365-71574ff6-3c06-4ba6-9247-916b59f63ebc.png)
+
+### Etapa 03 - Criar Consultas no Dax Studio
+
+
 ### ➡ Projeto Arquitetural
 <img src="https://datascibr.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe2645143-cffb-4c6d-ba10-ab1953017e13%2FUntitled.png?table=block&id=44ed2a6e-26df-461c-9a46-1f5c4b0743a5&spaceId=b0ad94d1-b13d-42e8-93ff-04ffcc74dc68&width=2000&userId=&cache=v2"/>
