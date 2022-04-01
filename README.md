@@ -70,6 +70,28 @@ EVALUATE ROW(
 ) 
 ```
 
+### Etapa 06 - Encontrar faturamento no Dax Studio II
+
+#### DAX 06
+
+> Criar a consulta DAX para retornar o total do faturamento das vendas referente ao ano de 1999 do estado “BA”. Usar a função TREATAS para filtrar o estado “BA”
+
+![image](https://user-images.githubusercontent.com/48892066/161326772-a3ee905b-ed53-4823-ac87-e4fcf308ba9a.png)
+
+> Código dax:
+
+```
+EVALUATE
+SUMMARIZECOLUMNS(
+	'public dim_loja'[dim_loj_nome],
+	'public dim_produto'[dim_pro_categoria],
+	TREATAS({1999}, 'public dim_tempo'[dim_tem_ano]),
+	TREATAS({"BA"}, 'public dim_loja'[dim_loj_estado]), 
+	"Total Faturamento", SUM('public fat_vendas'[fat_ven_faturamento])
+)
+```
+
+
 
 ### ➡ Projeto Arquitetural
 <img src="https://datascibr.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe2645143-cffb-4c6d-ba10-ab1953017e13%2FUntitled.png?table=block&id=44ed2a6e-26df-461c-9a46-1f5c4b0743a5&spaceId=b0ad94d1-b13d-42e8-93ff-04ffcc74dc68&width=2000&userId=&cache=v2"/>
