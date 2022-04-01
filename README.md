@@ -93,7 +93,11 @@ EVALUATE ROW(
 ) 
 ```
 
-### Etapa 04 - 
+### Etapa 04 - Criar uma nova coluna de tempo (mês/ano) no Power BI
+
+Orientações:
+
+> No Power BI criar uma nova coluna na tabela de dimensão DIM_TEMPO DIM_TEM_MES_ANO_PW
 
 Resolução:
 
@@ -106,6 +110,27 @@ Resultado final no Power BI:
 
 ![image](https://user-images.githubusercontent.com/48892066/161332812-bbb98fa0-919c-4bee-8b0b-7788a6efb53b.png)
 
+
+### Etapa 05 - Encontrar faturamento no Dax Studio I
+
+> DAX 5: Criar a consulta DAX para retornar o total do faturamento das vendas referentes a Categoria=“CAT1” (DIM_PRODUTO) e do Estado=“BA” (DIM_LOJA)
+
+Resolução:
+
+![image](https://user-images.githubusercontent.com/48892066/161333597-22a36bac-3d45-4b98-b599-9ad63f2a38ff.png)
+
+Código Dax:
+
+```
+EVALUATE
+SUMMARIZECOLUMNS (
+	'public dim_tempo'[dim_tem_mes_ano_pw],
+	'public dim_loja'[dim_loj_nome],
+	FILTER('public dim_loja', 'public dim_loja'[dim_loj_estado] = "BA"),
+	FILTER('public dim_produto', 'public dim_produto'[dim_pro_categoria]= "CAT1"),
+    "Total Sales", SUM ( 'public fat_vendas'[fat_ven_faturamento] )
+)
+```
 
 ### Etapa 06 - Encontrar faturamento no Dax Studio II
 
@@ -129,6 +154,26 @@ SUMMARIZECOLUMNS(
 	"Total Faturamento", SUM('public fat_vendas'[fat_ven_faturamento])
 )
 ```
+
+### Etapa 07 - Criar o Painel I no Power BI
+
+![passoVII.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2a5296be-e62e-4dbc-8d4f-1f4d74b6bb68/passoVII.png)
+
+### Etapa 08 - Criar nova coluna no Power BI
+
+Orientações: 
+> Criar no Power BI uma  nova coluna do tipo data na tabela dimensão DIM_TEMPO – DIM_TEM_DIA_MES_ANO_PW
+
+Resolução:
+
+Foi utilizado o recurso de coluna calculada com a seguinte formula Dax:
+
+```
+dim_dia_mes_ano_pw = FORMAT(DATE('public dim_tempo'[dim_tem_ano], 'public dim_tempo'[dim_tem_mes], 'public dim_tempo'[dim_tem_dia]), "dddd, dd \de mmmm \de yyyy")
+```
+Resultado final no Power BI: 
+![image](https://user-images.githubusercontent.com/48892066/161334034-aedf4e80-d99f-4bdc-acfe-5cefb1182e8d.png)
+
 
 ### Etapa 09 - Criar a Painel I com novos elementos no Power BI
 
