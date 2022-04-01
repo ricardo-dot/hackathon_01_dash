@@ -21,6 +21,7 @@
 ### Etapa 03 - Criar Consultas no Dax Studio
 
 **DAX I: Listar os estados da dimensão DIM_LOJA
+
 ![image](https://user-images.githubusercontent.com/48892066/161325244-a67546d4-5d86-42f9-a4e7-0a4c91d30be3.png)
 
 **Código Dax:
