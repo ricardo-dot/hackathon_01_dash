@@ -22,6 +22,7 @@
 
 #### DAX 1
 > Listar os estados da dimensão DIM_LOJA
+
 ![image](https://user-images.githubusercontent.com/48892066/161325244-a67546d4-5d86-42f9-a4e7-0a4c91d30be3.png)
 
 > Código Dax:
@@ -47,7 +48,7 @@ DISTINCT ( 'public dim_loja'[dim_loj_estado] )
 
 ![image](https://user-images.githubusercontent.com/48892066/161326032-936635e1-6a53-43f0-bb2b-11256550acb4.png)
 
-> Código Dax
+> Código Dax:
 
 ```
 EVALUATE
@@ -56,6 +57,19 @@ FILTER(
 'public dim_loja'[dim_loj_estado] = "BA"
 )
 ```
+#### DAX 4
+> Calcular o faturamento total da tabela de fatos FAT_VENDAS
+
+![image](https://user-images.githubusercontent.com/48892066/161326269-f31a5f84-ff1e-45c3-8374-33fc7b7f9bcb.png)
+
+> Código Dax:
+
+```
+EVALUATE ROW(
+	"Total vendas", SUM('public fat_vendas'[fat_ven_faturamento])
+) 
+```
+
 
 ### ➡ Projeto Arquitetural
 <img src="https://datascibr.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe2645143-cffb-4c6d-ba10-ab1953017e13%2FUntitled.png?table=block&id=44ed2a6e-26df-461c-9a46-1f5c4b0743a5&spaceId=b0ad94d1-b13d-42e8-93ff-04ffcc74dc68&width=2000&userId=&cache=v2"/>
