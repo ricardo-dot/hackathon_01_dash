@@ -116,5 +116,28 @@ SUMMARIZECOLUMNS(
 )
 ```
 
+### Etapa 09 - Criar a Painel I com novos elementos no Power BI
 
+Orientação:
+> Criar uma medida para apresentar o crescimento percentual do faturamento dos estados “BA” e “PB” entre os anos 1999 e 2000.
+> 
+> Apresentar as tabelas com o componentes no Power BI (painel 1)
+> 
+> ![https---s3-us-west-2 amazonaws com-secure notion-static com-b6f50066-8b19-463a-b1f9-a34fec048f58-passoIX](https://user-images.githubusercontent.com/48892066/161332187-3006e58a-b364-419a-80f2-aa85c6ab90b5.png)
+Resolução: 
 
+![image](https://user-images.githubusercontent.com/48892066/161332008-37526b52-568a-4289-987c-68cd995ceed0.png)
+
+Código Dax:
+```
+DEFINE
+	MEASURE 'medidas_percentual_faturamento'[total_faturamento] = 
+		SUM('public fat_vendas'[fat_ven_faturamento])
+
+	MEASURE 'medidas_percentual_faturamento'[periodo_faturamento] = 
+		CALCULATE([total_faturamento], SAMEPERIODLASTYEAR('public dim_tempo'[date]))
+
+	MEASURE  'medidas_percentual_faturamento'[Yoy_faturamento] = 
+		DIVIDE([total_faturamento]-[periodo_faturamento], [periodo_faturamento])-1
+	EVALUATE{ [Yoy_faturamento] }
+```
