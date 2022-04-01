@@ -20,14 +20,41 @@
 
 ### Etapa 03 - Criar Consultas no Dax Studio
 
-**DAX I: Listar os estados da dimensão DIM_LOJA
-
+#### DAX 1
+> Listar os estados da dimensão DIM_LOJA
 ![image](https://user-images.githubusercontent.com/48892066/161325244-a67546d4-5d86-42f9-a4e7-0a4c91d30be3.png)
 
-**Código Dax:
+> Código Dax:
 ```
 EVALUATE
 'public dim_loja'
+```
+
+#### DAX 2
+> Listar os estados sem repetição da dimensão DIM_LOJA
+
+![image](https://user-images.githubusercontent.com/48892066/161325699-4c8d62b0-5a83-4420-a93b-e2dc6b8e178c.png)
+
+> Código Dax:
+
+```
+EVALUATE
+DISTINCT ( 'public dim_loja'[dim_loj_estado] )
+```
+
+#### DAX 3
+> Listar o campus da dimensão DIM_LOJA filtrados pelo estado BA
+
+![image](https://user-images.githubusercontent.com/48892066/161326032-936635e1-6a53-43f0-bb2b-11256550acb4.png)
+
+> Código Dax
+
+```
+EVALUATE
+FILTER(
+'public dim_loja',
+'public dim_loja'[dim_loj_estado] = "BA"
+)
 ```
 
 ### ➡ Projeto Arquitetural
