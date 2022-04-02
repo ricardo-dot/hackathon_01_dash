@@ -6,6 +6,13 @@
 ## Equipe CyberChase
 **Integrantes:** Mariana Farias, Paulo Ricardo F. Neves, Vagner Rocha e Sarah Barbosa.
 
+### ➡ Resultado final
+O painel de resultado (reconstruido em Python) pode ser visto acessando o link: https://share.streamlit.io/ricardo-dot/hackathon_01_dash/main/main.py
+
+As etapas de resolução em Python podem ser acompanhandas acessando o notebook a seguir: https://github.com/ricardo-dot/hackathon_01_dash/blob/main/notebook.ipynb
+
+A resolução das etapas em DAX pode ser conferida seguindo o link: https://github.com/ricardo-dot/hackathon_01_dash/blob/main/Hackathon-PBI/codigo_dax_studio.dax
+
 ### ➡ Regras
 - Cada equipe só poderá ter no máximo três componentes
 - A cada etapa concluída a equipe deverá notificar os facilitadores  (gestores da dinâmica)
